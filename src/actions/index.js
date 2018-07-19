@@ -1,12 +1,14 @@
+import * as types from "../constants/ActionType";
+
 export const increate = index => {
-  return { type: "INCREMENT", index };
+  return { type: types.INCREMENT, index };
 };
 export const decreate = index => {
-  return { type: "DECREMENT", index };
+  return { type: types.DECREMENT, index };
 };
 export const multiple = (index, multipler) => {
-  return { type: "MULTIPLE", multipler, index };
+  return { type: types.MULTIPLE, multipler, index };
 };
 export const reset = index => {
-  return { type: "RESET", index };
+  return { type: types.RESET, index };
 };

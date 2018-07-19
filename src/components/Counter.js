@@ -10,19 +10,19 @@ export default class Counter extends React.Component {
 
   multiple = id => {
     const times = this.multipler.current.value;
-    const multiple = this.props.cMultiple;
+    const multiple = this.props.onMultiple;
     multiple(id, times);
   };
 
   asyncIncre = id => {
     setTimeout(() => {
-      const increate = this.props.cIncrement;
+      const increate = this.props.onIncrement;
       increate(id);
     }, 1000);
   };
 
   render() {
-    const { id, value, cIncrement, cDecrement, cReset } = this.props;
+    const { id, value, onIncrement, onDecrement, onReset } = this.props;
     return (
       <div class="counter">
         <button
@@ -36,7 +36,7 @@ export default class Counter extends React.Component {
         <button
           className="btn"
           onClick={() => {
-            cIncrement(id);
+            onIncrement(id);
           }}
         >
           +
@@ -44,7 +44,7 @@ export default class Counter extends React.Component {
         <button
           className="btn"
           onClick={() => {
-            cDecrement(id);
+            onDecrement(id);
           }}
         >
           -
@@ -70,7 +70,7 @@ export default class Counter extends React.Component {
         <button
           className="btn reset"
           onClick={() => {
-            cReset(id);
+            onReset(id);
           }}
         >
           RESET
